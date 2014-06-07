@@ -35,6 +35,8 @@ public class UnitCreep : Unit {
 	public AudioClip audioHit;
 	public AudioClip audioDead;
 	public AudioClip audioScore;
+
+	public float Regen;
 	
 	[HideInInspector] public int waveID;
 	
@@ -180,7 +182,7 @@ public class UnitCreep : Unit {
 	
 	public override void Update () {
 		base.Update();
-		this.HPAttribute.ApplyDamage (.01f);
+		this.ApplyDamage (Regen);
 		if(!stunned && !dead) {
 			MoveWPMode();
 		}

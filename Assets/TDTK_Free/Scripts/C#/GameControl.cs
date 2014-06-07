@@ -121,8 +121,9 @@ public class GameControl : MonoBehaviour {
 	void OnEnable(){
 		SpawnManager.onWaveStartSpawnE += OnWaveStartSpawned;
 		SpawnManager.onWaveClearedE += OnWaveCleared;
-		
-		UnitCreep.onScoreE += OnDeductLife;
+
+		UnitCreep.onDeadE += OnDeductLife;
+		//UnitCreep.onScoreE += OnDeductLife;
 		UnitTower.onDestroyE += OnTowerDestroy;
 		UnitTower.onDragNDropE += onTowerDragNDropEnd;
 	}
